@@ -2,7 +2,7 @@ from konlpy.tag import Okt
 import re
 
 # 경로
-path_f=".\\konlpy\\log.txt"
+path_f=".\\log\\log.txt"
 
 # 패턴
 p=re.compile('^\'\'\'.*\'\'\'$')
@@ -28,6 +28,5 @@ for line in text:
     temp+=line
     
     if p_e.search(line):
-        temp=re.sub(p_e,'', temp, 0)
+        temp=re.sub(p_e,'',temp, 0)
         data.append(temp)
-
