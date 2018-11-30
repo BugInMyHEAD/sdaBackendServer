@@ -4,6 +4,7 @@ import time
 import datetime as dt
 import re
 import platform
+import sys
 
 # 경로
 sysname = platform.system()
@@ -13,6 +14,7 @@ elif sysname == 'Windows':
     path_d='.\\crawling\\chromedriver.exe'
 else:
     print("Your system doesn't seem to be Linux or Windows.")
+    sys.exit()
 path_f="./log/log.txt"
 
 # 브라우저 옵션
