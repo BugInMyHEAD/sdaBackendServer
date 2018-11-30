@@ -5,20 +5,20 @@ import datetime as dt
 import re
 
 # 경로
-path_d=".\\crawling\\chromedriver.exe"
-path_f=".\\crawling\\log.txt"
+path_d=".//chromedriver"
+path_f=".//test.txt"
 
 # 브라우저 옵션
 options=webdriver.ChromeOptions()
-options.add_argument('headless')
+options.add_argument('--headless')
 
 # chrome을 통해 크롤링
-browser=webdriver.Chrome(path_d, chrome_options=options)
+browser=webdriver.Chrome(executable_path=path_d, options=options)
 
 # 시간
-startdate=dt.date(year=2017,month=1,day=1) 
-untildate=dt.date(year=2017,month=1,day=2) 
-enddate=dt.date(year=2018,month=11,day=10) 
+startdate=dt.date(year=2018,month=11,day=20) 
+untildate=dt.date(year=2018,month=11,day=21) 
+enddate=dt.date(year=2018,month=11,day=30) 
 
 # 파일 생성
 f = open(path_f,mode='w', encoding='utf8')
