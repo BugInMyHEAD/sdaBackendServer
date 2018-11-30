@@ -3,9 +3,14 @@ from selenium import webdriver
 import time
 import datetime as dt
 import re
+import platform
 
 # 경로
-path_d="./crawling/chromedriver"
+sysname = platform.system()
+if sysname == 'Linux':
+    path_d="./crawling/chromedriver"
+else:
+    path_d='.\\crawling\\chromedriver.exe'
 path_f="./log/log.txt"
 
 # 브라우저 옵션
