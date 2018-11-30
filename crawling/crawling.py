@@ -9,8 +9,10 @@ import platform
 sysname = platform.system()
 if sysname == 'Linux':
     path_d="./crawling/chromedriver"
-else:
+elif sysname == 'Windows':
     path_d='.\\crawling\\chromedriver.exe'
+else:
+    print("Your system doesn't seem to be Linux or Windows.")
 path_f="./log/log.txt"
 
 # 브라우저 옵션
