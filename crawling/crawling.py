@@ -5,8 +5,8 @@ import datetime as dt
 import re
 
 # 경로
-path_d=".//crawling//chromedriver.exe"
-path_f=".//log//log.txt"
+path_d="./crawling/chromedriver"
+path_f="./log/log.txt"
 
 # 브라우저 옵션
 options=webdriver.ChromeOptions()
