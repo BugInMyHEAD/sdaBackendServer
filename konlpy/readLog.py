@@ -17,16 +17,22 @@ with open(path_f, mode='r', encoding='utf-8-sig') as f:
 data=[ ]
 for line in text:
     if p.search(line):
-        line=re.sub(p_s,'',line,0)
-        data.append(re.sub(p_e,'',line,0))
+        line=re.sub(p_s, '', line)
+        data.append(re.sub(p_e, '', line))
         continue
     
     if p_s.search(line):
         temp=''
-        line=re.sub(p_s,'',line,0)
+        line=re.sub(p_s, '', line)
     
     temp+=line
     
     if p_e.search(line):
-        temp=re.sub(p_e,'',temp, 0)
+        temp=re.sub(p_e, '', temp)
         data.append(temp)
+
+if __name__ == '__main__':
+    with open("./konlpy/readLogResult.txt", mode='w', encoding='utf-8') as f:
+        for twit in data:
+            f.write(',..,')
+            f.write(twit)
