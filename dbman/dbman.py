@@ -11,7 +11,8 @@ class recipe_db_connection:
 
 # Open database connection
 db = pymysql.connect(
-    host='localhost', port=3306, user='root', passwd='1111', db='sdadb', charset='utf8', autocommit=True)
+    host='localhost', port=3306, user='root', passwd='1111', db='sdadb',
+    charset='utf8', autocommit=True)
 
 # prepare a cursor object using cursor() method
 cursor = db.cursor()
