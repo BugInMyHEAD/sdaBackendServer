@@ -30,3 +30,5 @@ for line in text:
     if p_e.search(line):
         temp=re.sub(p_e,'',temp, 0)
         data.append(temp)
+
+print(len(data))
