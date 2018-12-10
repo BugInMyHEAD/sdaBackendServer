@@ -21,11 +21,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get("/:id", function(req,res){
-	var sql = `SELECT * FROM recipe WHERE bread_id='${req.params.id}'`;
+	var sql = `SELECT recipe_id,ingredient.name_ko_kr as name,ingredient_category.name 
+		as category, preference   
+		FROM preference 
+		JOIN ingredient ON preference.ingredient_id = ingredient.id 
+		JOIN ingredient_category ON ingredient.category = ingredient_category.id 
+		WHERE recipe_id='${req.params.id}'`;
+
 	conn.query(sql,function(err,rows,fields){
 		if(err){
 			console.log(err);
-		}else{
+		}else{	
 			res.send(rows);
 		}
 	})
